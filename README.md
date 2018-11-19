@@ -9,7 +9,14 @@ gateway | 13.75ms | 1.53k
 zuul | 18.55ms | 1.27k
 none | 0.87ms | 5.62k
 
-MacBook Pro (Retina, 15-inch, Mid 2015), sleuth integrated
+MacBook Pro (Retina, 15-inch, Mid 2015), sleuth 2.0.3.RELEASE integrated
+
+Proxy | Avg Latency | Avg Req/Sec/Thread
+-- | -- | -- 
+gateway | 47.91ms | 420.04
+zuul | 24.85ms | 0.93k
+
+MacBook Pro (Retina, 15-inch, Mid 2015), sleuth 2.1.0-BUILD-SNAPSHOT integrated
 
 Proxy | Avg Latency | Avg Req/Sec/Thread
 -- | -- | -- 
