@@ -37,12 +37,6 @@ cd gateway
 java -jar target/gateway-0.0.1-SNAPSHOT.jar 
 ```
 
-## Terminal 4 (linkerd)
-```bash
-cd linkerd
-java -jar linkerd-1.3.4.jar linkerd.yaml
-```
-
 ## Terminal N (wrk)
 
 ### install `wrk`
