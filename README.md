@@ -1,9 +1,7 @@
 Spring Cloud Gateway with sleuth Benchmark
 =======
 
-MacBook Pro (Retina, 15-inch, Mid 2015)
-
-with no sleuth integrated
+MacBook Pro (Retina, 15-inch, Mid 2015), no sleuth integrated
 
 Proxy | Avg Latency | Avg Req/Sec/Thread
 -- | -- | -- 
@@ -11,6 +9,16 @@ gateway | xx ms | xx k
 linkered | NA | NA
 zuul | 12.56ms | 2.09k
 none | NA | NA
+
+MacBook Pro (Retina, 15-inch, Mid 2015), no sleuth integrated
+
+Proxy | Avg Latency | Avg Req/Sec/Thread
+-- | -- | -- 
+gateway | xx ms | xx k
+linkered | NA | NA
+zuul | 12.56ms | 2.09k
+none | NA | NA
+
 
 ## Terminal 1 (simple webserver)
 
