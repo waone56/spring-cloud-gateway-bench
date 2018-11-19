@@ -5,12 +5,11 @@ MacBook Pro (Retina, 15-inch, Mid 2015), no sleuth integrated
 
 Proxy | Avg Latency | Avg Req/Sec/Thread
 -- | -- | -- 
-gateway | xx ms | xx k
-linkered | NA | NA
-zuul | 12.56ms | 2.09k
-none | NA | NA
+gateway | 13.75ms | 1.53k
+zuul | 18.55ms | 1.27k
+none | 0.87ms | 5.62k
 
-MacBook Pro (Retina, 15-inch, Mid 2015), no sleuth integrated
+MacBook Pro (Retina, 15-inch, Mid 2015), sleuth integrated
 
 Proxy | Avg Latency | Avg Req/Sec/Thread
 -- | -- | -- 
@@ -62,12 +61,12 @@ $ wrk -t 10 -c 200 -d 30s http://localhost:8082/hello.txt
 Running 30s test @ http://localhost:8082/hello.txt
   10 threads and 200 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency     6.61ms    4.71ms  49.59ms   69.36%
-    Req/Sec     3.24k   278.42     9.02k    75.89%
-  969489 requests in 30.10s, 175.67MB read
-Requests/sec:  32213.38
-Transfer/sec:      5.84MB
-
+    Latency    13.75ms    9.22ms 154.98ms   84.60%
+    Req/Sec     1.53k   144.28     1.89k    83.47%
+  457689 requests in 30.05s, 63.29MB read
+  Socket errors: connect 0, read 53, write 0, timeout 0
+Requests/sec:  15232.68
+Transfer/sec:      2.11MB
 ```
 
 ### zuul bench (8081)
@@ -76,24 +75,12 @@ Transfer/sec:      5.84MB
 Running 30s test @ http://localhost:8081/hello.txt
   10 threads and 200 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency    12.56ms   13.35ms 195.11ms   86.33%
-    Req/Sec     2.09k   215.10     4.28k    71.81%
-  625781 requests in 30.09s, 123.05MB read
-Requests/sec:  20800.13
-Transfer/sec:      4.09MB
-```
-
-### linkerd bench (4140)
-```bash
-~% wrk -H "Host: web" -t 10 -c 200 -d 30s http://localhost:4140/hello.txt
-Running 30s test @ http://localhost:4140/hello.txt
-  10 threads and 200 connections
-  Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency     7.62ms    5.45ms  53.51ms   69.82%
-    Req/Sec     2.82k   184.58     4.11k    72.17%
-  843418 requests in 30.07s, 186.61MB read
-Requests/sec:  28050.76
-Transfer/sec:      6.21MB
+    Latency    18.55ms   17.56ms 255.92ms   82.69%
+    Req/Sec     1.27k   236.91    10.36k    89.74%
+  379894 requests in 30.10s, 58.40MB read
+  Socket errors: connect 0, read 83, write 0, timeout 0
+Requests/sec:  12623.04
+Transfer/sec:      1.94MB
 ```
 
 ### no proxy bench (8000)
@@ -102,9 +89,10 @@ Transfer/sec:      6.21MB
 Running 30s test @ http://localhost:8000/hello.txt
   10 threads and 200 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency     2.09ms    2.07ms  28.37ms   85.89%
-    Req/Sec    11.77k     2.07k   45.46k    70.97%
-  3516807 requests in 30.10s, 637.24MB read
-Requests/sec: 116841.15
-Transfer/sec:     21.17MB
+    Latency     0.87ms  460.43us  20.91ms   83.89%
+    Req/Sec     5.62k     3.00k   12.15k    60.43%
+  1679137 requests in 30.01s, 232.20MB read
+  Socket errors: connect 0, read 148, write 0, timeout 0
+Requests/sec:  55958.10
+Transfer/sec:      7.74MB
 ```
