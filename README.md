@@ -1,7 +1,9 @@
 Spring Cloud Gateway with sleuth Benchmark
 =======
 
-TL;DR
+MacBook Pro (Retina, 15-inch, Mid 2015)
+
+with no sleuth integrated
 
 Proxy | Avg Latency | Avg Req/Sec/Thread
 -- | -- | -- 
