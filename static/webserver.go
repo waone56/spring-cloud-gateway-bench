@@ -29,6 +29,10 @@ func serveContent(file string) string {
 //REST handler
 func handler(w http.ResponseWriter, r *http.Request) {
     log.Print("Processing request: ", r.URL.Path[1:])
+    //Iterate over all header fields
+    //for k, v := range r.Header {
+    //  log.Printf("Header field %q, Value %q\n", k, v)
+    //}
     str := serveContent(r.URL.Path[1:])
     fmt.Fprintf(w, str)
 }
