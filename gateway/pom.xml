@@ -22,7 +22,8 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
-		<spring-cloud.version>Finchley.BUILD-SNAPSHOT</spring-cloud.version>
+      <spring-cloud.version>Finchley.BUILD-SNAPSHOT</spring-cloud.version>
+      <spring-cloud-sleuth.version>2.0.2.RELEASE</spring-cloud-sleuth.version>
 	</properties>
 
 	<dependencies>
@@ -45,7 +46,13 @@
 			<artifactId>reactor-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-	</dependencies>
+
+      <dependency>
+         <groupId>org.springframework.cloud</groupId>
+         <artifactId>spring-cloud-starter-sleuth</artifactId>
+      </dependency>
+
+   </dependencies>
 
 	<dependencyManagement>
 		<dependencies>
@@ -56,8 +63,23 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
-		</dependencies>
-	</dependencyManagement>
+         <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-sleuth</artifactId>
+            <version>${spring-cloud-sleuth.version}</version>
+            <type>pom</type>
+            <scope>import</scope>
+         </dependency>
+         <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-sleuth-core</artifactId>
+            <version>2.1.0.BUILD-SNAPSHOT</version>
+            <type>pom</type>
+            <scope>import</scope>
+         </dependency>
+
+      </dependencies>
+   </dependencyManagement>
 
 	<build>
 		<plugins>
