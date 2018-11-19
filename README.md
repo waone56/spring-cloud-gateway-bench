@@ -16,12 +16,12 @@ Proxy | Avg Latency | Avg Req/Sec/Thread
 gateway | 47.91ms | 420.04
 zuul | 24.85ms | 0.93k
 
-MacBook Pro (Retina, 15-inch, Mid 2015), sleuth 2.1.0-BUILD-SNAPSHOT integrated
+MacBook Pro (Retina, 15-inch, Mid 2015), sleuth 2.0.3.RELEASE, sleuth core 2.1.0.BUILD-SNAPSHOT integrated
 
 Proxy | Avg Latency | Avg Req/Sec/Thread
 -- | -- | -- 
-gateway | xx ms | xx k
-zuul | 12.56ms | 2.09k
+gateway | 50.88ms | 395.44
+zuul | 24.24ms | 0.95k
 
 ## Terminal 1 (simple webserver)
 
